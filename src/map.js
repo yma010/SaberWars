@@ -1,13 +1,13 @@
 class Map {
 
   constructor(opts){
-  this.fps = 30;
-  this.canvas = null;
-  this.width = 0;
-  this.minVel = 15;
-  this.maxVel = 30;
-  this.stars = 200;
-  this.intID = 0;
+    this.fps = 30;
+    this.canvas = null;
+    this.width = 0;
+    this.minVel = 15;
+    this.maxVel = 30;
+    this.stars = 200;
+    this.intID = 0;
   }
 
   init (div) {
