@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(\"Webpack is working!\")\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("document.addEventListener('DOMContentLoaded', (event) => {\n  const gameCanvas = document.getElementById(\"game-canvas\");\n  const ctx = gameCanvas.getContext(\"2d\")\n  \n  ctx.fillStyle = \"black\";\n  ctx.fillRect(0, 0, 690, 420);\n\n  // const game = new Game();\n  // game.draw(ctx);\n  \n  // const gameView = new GameView(game, ctx);\n  // gameView.start();\n});\n\n\nconsole.log(\"Webpack is working!\")\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
