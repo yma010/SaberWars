@@ -9,11 +9,11 @@ const Heroine = function() {
     x : screenWidth / 2,
     y : screenHeight - 20
   };
-  console.log(this.position);
+
   const self = this;
-
+  debugger;
   this.livesEl = document.getElementsByClassName("lives");
-
+  
   const create = function () {
     self.el = document.createElement("div");
     self.el.setAttribute("id", "heroine");
@@ -33,23 +33,22 @@ const Heroine = function() {
     // board.playerExplodeFX.play();
 
     if (self.lives >= 2) {
-      console.log(livesEl);
       self.livesEl[0].remove()
       self.lives-- ;
       if (board.movement.left) {
-        moveRight;
-      } else if (board.movement.right) {
         moveLeft;
+      } else if (board.movement.right) {
+        moveRight;
       } else {
         heroineHit;
       }
     } else if (self.lives === 1) {
+      self.lives--;
       self.livesEl[0].remove()
-      self.lives --;
       if (board.movement.left) {
-        moveRight;
-      } else if (board.movement.right) {
         moveLeft;
+      } else if (board.movement.right) {
+        moveRight;
       } else {
         heroineHit;
       }

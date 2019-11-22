@@ -111,7 +111,7 @@ const Board = function(){
 
           if (self.collision(rockDetect, beamDetect)) {
             self.sabers[idx].removeBeam();
-            self.rocks[idx].hit(idx);
+            self.rocks[k].hit(k);
           }
 
         }
@@ -125,15 +125,15 @@ const Board = function(){
 
         if (self.collision(saberDetect, beamDetect)) {
           if (self.sabers[idx].el.className.includes("saber1")) {
-            self.score += 10;
+            self.score += 5;
           } else if (self.sabers[idx].el.className.includes("saber2")) {
             self.score += 15;
           } else if (self.sabers[idx].el.className.includes("saber3")) {
-            self.score += 20;
+            self.score += 25;
           }
 
           if (self.sabers[idx].beams.length !== 0) {
-            self.sabers[idx].beams[0].element.remove();
+            self.sabers[idx].beams[0].ele.remove();
           } 
           self.sabers[idx].explode(idx);
 
@@ -142,15 +142,15 @@ const Board = function(){
       }
     })
 
-    self.sabers.forEach(function(el, idx){
+    self.sabers.forEach((el, idx) => {
         if (self.sabers[idx].beams.length !== 0) {
             const saberBeamsDetect = self.sabers[idx].beams[0].ele.getClientRects()[0];
-            var heroineDetect = self.heroine.el.getClientRects()[0];
+            const heroineDetect = self.heroine.el.getClientRects()[0];
 
               if (self.collision(saberBeamsDetect, heroineDetect)) {
                 self.heroine.hit();
                 
-                self.sabers[idx].removeLaser();
+                self.sabers[idx].removeBeam();
                 }
         }
 
