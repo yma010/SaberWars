@@ -1,8 +1,8 @@
 const Saber = function (x, y, spd, type){
 
   this.pos = {
-    "x" : x,
-    "y" : y
+    x : x,
+    y : y
   }
 
   let hP = 1;
@@ -67,19 +67,19 @@ const Saber = function (x, y, spd, type){
     if (self.beams.length >= maxBeams) {
       return;
     } else if (Math.random() >= 0.998) {
-      self.beams.push(new Beams(self.pos.x, self.pos.y, -3, "enemy-beam"));
+      self.beams.push(new Beams(self.pos.x, self.pos.y, -3, "saber-beam"));
     }
   }
 
   this.removeBeam = function() {
-    self.beams[0].element.remove();
+    self.beams[0].ele.remove();
     self.beams.splice(0, 1);
   }
 
   this.explode = function(idx) {
-    board.sabers[idx].element.remove();
+    board.sabers[idx].el.remove();
     board.sabers.splice(idx, 1);
-    board.explodeFX.play();
+    // board.explodeFX.play();
   }
 
   this.render = function(){

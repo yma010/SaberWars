@@ -6,10 +6,10 @@ const Heroine = function() {
 
   this.beams = [];
   this.position = {
-    "x" : screenWidth / 2,
-    "y" : screenHeight - 20
+    x : screenWidth / 2,
+    y : screenHeight - 20
   };
-
+  console.log(this.position);
   const self = this;
 
   this.livesEl = document.getElementsByClassName("lives");
@@ -25,16 +25,17 @@ const Heroine = function() {
     board.appendChild(self.el);
   }
 
-  this.hit= function() {
+  this.hit = function() {
     const moveRight = self.el.style.backgroundImage="url(res/HeroineRT.png)";
     const moveLeft = self.el.style.backgroundImage = "url(res/HeroineLT.png)";
     const heroineHit = self.el.style.backgroundImage = "url(res/HeroineHit.png)";
 
-    board.playerExplodeFX.play();
+    // board.playerExplodeFX.play();
 
     if (self.lives >= 2) {
+      console.log(livesEl);
       self.livesEl[0].remove()
-      self.lives --;
+      self.lives-- ;
       if (board.movement.left) {
         moveRight;
       } else if (board.movement.right) {
@@ -61,11 +62,11 @@ const Heroine = function() {
       return;
     }
     // board.beamFX.play();
-    self.beams.push(new Beams(self.position.x, self.position.y, 15, 'heroine-bean'));
+    self.beams.push(new Beams(self.position.x, self.position.y, 15, 'heroine-beam'));
   }
 
   this.removeBeam = function() {
-    self.beams[0].el.remove();
+    self.beams[0].ele.remove();
     self.beams.splice(0,1);
   }
 
@@ -104,8 +105,7 @@ const Heroine = function() {
 
     self.beams.forEach(function(ele, idx){
       ele.render();
-
-      if (ele.position.y < 0) {
+      if (ele.pos.y < 0) {
         ele.el.remove();
         self.beams.splice(idx, 1);
       }

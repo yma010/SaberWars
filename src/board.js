@@ -16,13 +16,13 @@ const retryButton = document.getElementById('retrybutton');
 retryButton.addEventListener('click', function () {
   board.heroine.lives = 3;
   gameState = 'gamestart';
-  gameoverElement.style.zIndex = -1;
+  gameOverElement.style.zIndex = -1;
 })
 
 function gameOver(){
   gameState = 'gameover';
-  gameoverElement.style.zIndex = 1;
-  gameoverElement.classList.add('animated', 'slideInUp');
+  gameOverElement.style.zIndex = 1;
+  gameOverElement.classList.add('animated', 'slideInUp');
 }
 
 this.screenHeight = document.getElementById('board').getClientRects()[0].height;
@@ -39,9 +39,9 @@ const Board = function(){
 
   const self = this;
 
-  this.laserSFX = new Audio();
-  this.explodeFX = new Audio();
-  this.playerSFX = new Audio();
+  // this.laserSFX = new Audio();
+  // this.explodeFX = new Audio();
+  // this.playerSFX = new Audio();
 
   function spawnSabersRow(y, speed, type) {
     let x = 25;
@@ -94,10 +94,10 @@ const Board = function(){
     self.rocks.forEach(function(el, idx){
       if ((self.heroine.beams.length !== 0) && (self.rocks.length !== 0)){
         const rockDetect = self.rocks[idx].element.getClientRects()[0];
-        const beamDetect = self.beams[0].element.getClientRects()[0];
+        const beamDetect = self.heroine.beams[0].ele.getClientRects()[0];
 
         if (self.collision(rockDetect, beamDetect)) {
-          self.player.removeBeam();
+          self.heroine.removeBeam();
           self.rocks[idx].hit(idx);
         }
       }
@@ -107,7 +107,7 @@ const Board = function(){
       if ((self.sabers[idx].beams.length !== 0) && (self.rocks.length !== 0)) {
         for (let k = 0; k < self.rocks.length; k++) {
           const rockDetect = self.rocks[k].element.getClientRects()[0];
-          const beamDetect = self.sabers[idx].beams[0].element.getClientRects()[0];
+          const beamDetect = self.sabers[idx].beams[0].ele.getClientRects()[0];
 
           if (self.collision(rockDetect, beamDetect)) {
             self.sabers[idx].removeBeam();
@@ -120,15 +120,15 @@ const Board = function(){
 
     self.sabers.forEach(function (el, idx) {
       if ((self.heroine.beams.length !== 0) && (self.sabers.length !==0 )) {
-        const saberDetect = self.sabers[idx].element.getClientRects()[0];
-        const beamDetect = self.heroine.beams[0].element.getClientRects()[0];
+        const saberDetect = self.sabers[idx].el.getClientRects()[0];
+        const beamDetect = self.heroine.beams[0].ele.getClientRects()[0];
 
         if (self.collision(saberDetect, beamDetect)) {
-          if (self.aliens[index].element.className.includes("saber1")) {
+          if (self.sabers[index].element.className.includes("saber1")) {
             self.score += 10;
-          } else if (self.aliens[index].element.className.includes("saber2")) {
+          } else if (self.sabers[index].element.className.includes("saber2")) {
             self.score += 15;
-          } else if (self.aliens[index].element.className.includes("saber3")) {
+          } else if (self.sabers[index].element.className.includes("saber3")) {
             self.score += 20;
           }
 
@@ -144,8 +144,8 @@ const Board = function(){
 
     self.sabers.forEach(function(el, idx){
         if (self.sabers[idx].beams.length !== 0) {
-            const saberBeamsDetect = self.sabers[idx].beams[0].element.getClientRects()[0];
-            var heroineDetect = self.heroine.element.getClientRects()[0];
+            const saberBeamsDetect = self.sabers[idx].beams[0].ele.getClientRects()[0];
+            var heroineDetect = self.heroine.el.getClientRects()[0];
 
               if (self.collision(saberBeamsDetect, heroineDetect)) {
                 self.heroine.hit();
@@ -162,7 +162,7 @@ const Board = function(){
         const heroine = self.heroine.el.getClientRects()[0];
 
         if (self.collision(sabersDetect, heroine)) {
-              self.player.hit();
+              self.heroine.hit();
         }
       }
     })
@@ -177,11 +177,11 @@ const Board = function(){
     switch(e.keyCode) {
       case 37:
         self.movement.left = true;
-        self.heroine.style.backgroundImage="url(res/HeroineLT.png)";
+        self.heroine.el.style.backgroundImage="url(res/HeroineLT.png)";
         break;
       case 39:
         self.movement.right = true;
-        self.heroine.style.backgroundImage = "url(res/HeroineRT.png)";
+        self.heroine.el.style.backgroundImage = "url(res/HeroineRT.png)";
         break;
       case 32:
         self.movement.shoot = true;
@@ -193,11 +193,11 @@ const Board = function(){
     switch (e.keyCode) {
       case 37:
         self.movement.left = false;
-        self.heroine.element.style.backgroundImage = "url(res/Heroine.png)";
+        self.heroine.el.style.backgroundImage = "url(res/HeroineDefault.png)";
         break;
       case 39:
         self.movement.right = false;
-        self.heroine.element.style.backgroundImage = "url(res/Heroine.png)";
+        self.heroine.el.style.backgroundImage = "url(res/HeroineDefault.png)";
         break;
       case 32:
         self.movement.shoot = false;
