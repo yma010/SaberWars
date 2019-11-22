@@ -60,8 +60,8 @@ const Heroine = function() {
     if(self.beams.length >= maxBeam) {
       return;
     }
-    board.beamFX.play();
-    self.beams.push(new Beam(self.position.x, self.position.y, 15, 'heroine-bean'));
+    // board.beamFX.play();
+    self.beams.push(new Beams(self.position.x, self.position.y, 15, 'heroine-bean'));
   }
 
   this.removeBeam = function() {

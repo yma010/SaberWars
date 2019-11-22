@@ -7,7 +7,7 @@ let startButton = document.getElementById('startbutton');
 startButton.addEventListener('click', function(){
   gameState = 'gameStart';
   document.getElementById('start').style.zIndex = -1;
-  document.getElementById('player').style.zIndex = 0;
+  document.getElementById('heroine').style.zIndex = 0;
   document.getElementById('score-tracker').style.zIndex = 1;
   document.getElementById('life-tracker').style.zIndex = 1;
 })
@@ -44,8 +44,8 @@ const Board = function(){
   this.playerSFX = new Audio();
 
   function spawnSabersRow(y, speed, type) {
-    const x = 25;
-    const z = y;
+    let x = 25;
+    let z = y;
 
     for(let i = 0; i < 10; i++){
       self.sabers.push(new Saber(x, z, speed, type));
@@ -64,7 +64,7 @@ const Board = function(){
 
       if (self.rocks.length === 0) {
         let y = screenHeight - 150;
-        const x = 100;
+        let x = 100;
         for (let j = 0; j < 5; j++){
           self.rocks.push(new Rock(x, y));
           x += 150;
@@ -158,8 +158,8 @@ const Board = function(){
 
       self.sabers.forEach(function(el, idx){
       if ((self.heroine) && (self.sabers.length !== 0)) {
-        const sabersDetect = self.sabers[idx].element.getClientRects()[0];
-        const heroine = self.heroine.element.getClientRects()[0];
+        const sabersDetect = self.sabers[idx].el.getClientRects()[0];
+        const heroine = self.heroine.el.getClientRects()[0];
 
         if (self.collision(sabersDetect, heroine)) {
               self.player.hit();
@@ -180,10 +180,10 @@ const Board = function(){
         self.heroine.style.backgroundImage="url(res/HeroineLT.png)";
         break;
       case 39:
-        self.movement.left = true;
+        self.movement.right = true;
         self.heroine.style.backgroundImage = "url(res/HeroineRT.png)";
         break;
-      case 37:
+      case 32:
         self.movement.shoot = true;
         break;
       default:

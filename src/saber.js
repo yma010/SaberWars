@@ -67,7 +67,7 @@ const Saber = function (x, y, spd, type){
     if (self.beams.length >= maxBeams) {
       return;
     } else if (Math.random() >= 0.998) {
-      self.beams.push(new Beam(self.pos.x, self.pos.y, -3, "enemy-beam"));
+      self.beams.push(new Beams(self.pos.x, self.pos.y, -3, "enemy-beam"));
     }
   }
 

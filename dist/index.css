@@ -27,29 +27,29 @@
     left: 250px;
   }
 
-  #gameboard {
-    background-image: url("res/background.jpg");
+  #board {
+    background-image: url("../res/background.jpg");
     width: 800px;
     height: 600px;
   }
 
-  #player {
+  #heroine {
     height: 32px;
     width: 50px;
     position: absolute;
     margin-left: -25px;
     margin-top: -16px;
-    background-image: url("res/Heroine.png");
+    background-image: url("../res/HeroineDefault.png");
     background-size: 100% 100%;
     z-index: -1;
   }
 
   .bankleft {
-    background-image: url("res/HeroineLT.jpg");
+    background-image: url("../res/HeroineLT.jpg");
   }
 
   .bankright {
-    background-image: url("res/HeroineRT.jpg");
+    background-image: url("../res/HeroineRT.jpg");
   }
 
   .rock {
@@ -58,7 +58,7 @@
     position: absolute;
     margin-left: -25px;
     margin-top: -25px;
-    background-image: url("res/rock1.png");
+    background-image: url("../res/rock1.png");
     background-size: 100% 100%;
   }
 
@@ -68,7 +68,7 @@
     position: absolute;
     margin-top: -17.5px;
     margin-left: -2.5px;
-    background-image: url("res/player-laser.png");
+    background-image: url("../res/player-laser.png");
     background-size: 100% 100%;
 
   }
@@ -79,7 +79,7 @@
     position: absolute;
     margin-top: -7.5px;
     margin-left: -2.5px;
-    background-image: url("res/enemy-laser.png");
+    background-image: url("../res/enemy-laser.png");
     background-size: 100% 100%;
 
   }
@@ -88,7 +88,7 @@
     position: absolute;
     margin-top: -10px;
     margin-left: -10px;
-    background: url('res/Invaders.png') no-repeat -9px -18px;
+    background: url('../res/Invaders.png') no-repeat -9px -18px;
     width: 5px;
     height: 8px;
 	background-size: 100% 100%;
@@ -98,7 +98,7 @@
     position: absolute;
     margin-top: -10px;
     margin-left: -10px;
-    background: url('res/Invaders.png') no-repeat 0 -19px;
+    background: url('../res/Invaders.png') no-repeat 0 -19px;
     width: 5px;
     height: 7px;
 	  background-size: 100% 100%;
@@ -108,7 +108,7 @@
     position: absolute;
     margin-top: -10px;
     margin-left: -10px;
-    background: url('res/Invaders.png') no-repeat -18px -18px;
+    background: url('../res/Invaders.png') no-repeat -18px -18px;
     width: 5px;
     height: 8px;
 	background-size: 100% 100%;
