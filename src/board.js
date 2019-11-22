@@ -233,7 +233,7 @@ const Board = function(){
 
 }
 
-window.requestAnimFrame = (function () {
+window.requestAnimFrame = (() => {
   return window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
     window.mozRequestAnimationFrame ||

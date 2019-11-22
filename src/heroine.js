@@ -62,6 +62,8 @@ const Heroine = function() {
       return;
     }
     // board.beamFX.play();
+    console.log(self.position.x);
+    console.log(self.position.y);
     self.beams.push(new Beams(self.position.x, self.position.y, 15, 'heroine-beam'));
   }
 

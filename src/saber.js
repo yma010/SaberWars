@@ -31,19 +31,20 @@ const Saber = function (x, y, spd, type){
   }
 
   function edgeDetect() {
+    debugger;
+    if (self.pos.x >= (screenWidth - 15)) {
 
-    if (self.pos.x >= (screenWidth-15)) {
       self.motion.right = false;
       self.motion.down = true;
-      setTimeout(function () {
-        self.motion.down = false;
+      setTimeout(() => {
         self.motion.left = true;
+        self.motion.down = false;
       }, 400);
     }
-    if (self.pos.x <= 15){
+    if (self.pos.x <= 15) {
       self.motion.left = false;
       self.motion.down = true;
-      setTimeout(function () {
+      setTimeout(() => {
         self.motion.down = false;
         self.motion.right = true;
       }, 400);
@@ -56,6 +57,9 @@ const Saber = function (x, y, spd, type){
       self.pos.x += self.spd;
     }
     if (self.motion.left) {
+      self.pos.x -= self.spd;
+    }
+    if (self.motion.down) {
       self.pos.y += self.spd;
     }
 

@@ -11,8 +11,17 @@
   }
 
   h1 {
+    margin-left: 10px;
     display: flex;
     align-content: center;
+  }
+
+  h2 {
+    width: 285px;
+    position: absolute;
+    top: 250px;
+    left: 315px;
+    cursor: default;
   }
 
   #start {
@@ -24,7 +33,8 @@
   #startbutton {
     position: absolute;
     top: 350px;
-    left: 250px;
+    left: 280px;
+    cursor: pointer;
   }
 
   #board {
@@ -88,19 +98,19 @@
     position: absolute;
     margin-top: -10px;
     margin-left: -10px;
-    background: url('./res/Invaders.png') no-repeat -9px -18px;
-    width: 5px;
-    height: 8px;
-	background-size: 100% 100%;
+    background-image: url('./res/ArtoriaInvader.png');
+    width: 20px;
+    height: 30px;
+	  background-size: 100% 100%;
   }
 
   .saber2 {
     position: absolute;
     margin-top: -10px;
     margin-left: -10px;
-    background: url('./res/Invaders.png') no-repeat 0 -19px;
-    width: 5px;
-    height: 7px;
+    background-image: url('./res/LilyInvader.png');
+    width: 20px;
+    height: 30px;
 	  background-size: 100% 100%;
   }
 
@@ -108,9 +118,9 @@
     position: absolute;
     margin-top: -10px;
     margin-left: -10px;
-    background: url('./res/Invaders.png') no-repeat -18px -18px;
-    width: 5px;
-    height: 8px;
+    background-image: url('./res/AlterInvader.png');
+    width: 20px;
+    height: 30px;
 	  background-size: 100% 100%;
   }
 
