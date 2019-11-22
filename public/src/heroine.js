@@ -62,8 +62,7 @@ const Heroine = function() {
       return;
     }
     // board.beamFX.play();
-    console.log(self.position.x);
-    console.log(self.position.y);
+
     self.beams.push(new Beams(self.position.x, self.position.y, 15, 'heroine-beam'));
   }
 
@@ -106,9 +105,10 @@ const Heroine = function() {
     edgeDetect();
 
     self.beams.forEach(function(ele, idx){
+      debugger;
       ele.render();
       if (ele.pos.y < 0) {
-        ele.el.remove();
+        ele.ele.remove();
         self.beams.splice(idx, 1);
       }
     });

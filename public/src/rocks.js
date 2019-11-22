@@ -12,21 +12,21 @@ const Rock = function(x,y) {
 
     const createRock = function () {
 
-            self.element = document.createElement("div");
-            self.element.classList.add("rock");
+        self.element = document.createElement("div");
+        self.element.classList.add("rock");
 
-            self.element.style.top = self.position.y + "px";
-            self.element.style.left = self.position.x + "px";
+        self.element.style.top = self.position.y + "px";
+        self.element.style.left = self.position.x + "px";
 
-            const board = document.getElementById("board");
-            board.appendChild(self.element);
+        const board = document.getElementById("board");
+        board.appendChild(self.element);
     	
     }
 
     this.hit = function(index){
       
         self.health--;
-        board.explodefx.play();
+        // board.explodefx.play();
         switch (self.health){
             case 3:
             self.element.style.opacity = 0.75;
@@ -37,8 +37,8 @@ const Rock = function(x,y) {
             case 1:
             self.element.style.opacity = 0.25;
             default:
-            gameBoard.rocks[index].element.remove();
-            gameBoard.rocks.splice(index,1);
+            board.rocks[index].element.remove();
+            board.rocks.splice(index,1);
         }
 
     }

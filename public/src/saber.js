@@ -31,7 +31,6 @@ const Saber = function (x, y, spd, type){
   }
 
   function edgeDetect() {
-    debugger;
     if (self.pos.x >= (screenWidth - 15)) {
 
       self.motion.right = false;
@@ -94,7 +93,7 @@ const Saber = function (x, y, spd, type){
     self.beams.forEach(function(el, idx) {
       el.render();
       if (el.pos.y > screenHeight) {
-        el.element.remove();
+        el.ele.remove();
         self.beams.splice(idx, 1);
       }
     })

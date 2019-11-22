@@ -12,7 +12,7 @@ const Beams = function(x, y, spd, type){
     self.ele = document.createElement("div");
     self.ele.classList.add(type);
 
-    self.ele.style.top = self.pos.y = "px";
+    self.ele.style.top = self.pos.y + "px";
     self.ele.style.left = self.pos.x + "px";
 
     const board = document.getElementById("board");
