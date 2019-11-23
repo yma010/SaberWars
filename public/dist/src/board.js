@@ -13,7 +13,7 @@ startButton.addEventListener('click', function(){
 })
 
 const retryButton = document.getElementById('retrybutton');
-retryButton.addEventListener('click', function () {
+retryButton.addEventListener('click', () => {
   board.heroine.lives = 3;
   gameState = 'gamestart';
   gameOverElement.style.zIndex = -1;
@@ -39,9 +39,9 @@ const Board = function(){
 
   const self = this;
 
-  // this.laserSFX = new Audio();
+  this.excalibur = new Audio('./res/Exaclibahhh.mp3');
   // this.explodeFX = new Audio();
-  // this.playerSFX = new Audio();
+  this.MHXScream = new Audio('./res/MHXScream.mp3');
 
   function spawnSabersRow(y, speed, type) {
     let x = 25;

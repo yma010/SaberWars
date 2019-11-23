@@ -11,7 +11,6 @@ const Heroine = function() {
   };
 
   const self = this;
-  debugger;
   this.livesEl = document.getElementsByClassName("lives");
   
   const create = function () {
@@ -30,7 +29,7 @@ const Heroine = function() {
     const moveLeft = self.el.style.backgroundImage = "url(res/HeroineLT.png)";
     const heroineHit = self.el.style.backgroundImage = "url(res/HeroineHit.png)";
 
-    // board.playerExplodeFX.play();
+    board.MHXScream.play();
 
     if (self.lives >= 2) {
       self.livesEl[0].remove()
@@ -58,10 +57,10 @@ const Heroine = function() {
 
   const shoot = function() {
     if(self.beams.length >= maxBeam) {
+      board.excalibur.play();
       return;
     }
-    // board.beamFX.play();
-
+    board.excalibur.play();
     self.beams.push(new Beams(self.position.x, self.position.y, 15, 'heroine-beam'));
   }
 
@@ -104,7 +103,6 @@ const Heroine = function() {
     edgeDetect();
 
     self.beams.forEach(function(ele, idx){
-      debugger;
       ele.render();
       if (ele.pos.y < 0) {
         ele.ele.remove();

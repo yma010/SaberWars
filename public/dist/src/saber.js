@@ -38,7 +38,7 @@ const Saber = function (x, y, spd, type){
       setTimeout(() => {
         self.motion.left = true;
         self.motion.down = false;
-      }, 400);
+      }, 100);
     }
     if (self.pos.x <= 15) {
       self.motion.left = false;
@@ -46,7 +46,7 @@ const Saber = function (x, y, spd, type){
       setTimeout(() => {
         self.motion.down = false;
         self.motion.right = true;
-      }, 400);
+      }, 100);
     }
   }
 
