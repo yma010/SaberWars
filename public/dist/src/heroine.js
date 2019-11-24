@@ -27,7 +27,7 @@ const Heroine = function() {
   this.hit = function() {
     const moveRight = self.el.style.backgroundImage="url(res/HeroineRT.png)";
     const moveLeft = self.el.style.backgroundImage = "url(res/HeroineLT.png)";
-    const heroineHit = self.el.style.backgroundImage = "url(res/HeroineHit.png)";
+    const heroineHit = self.el.style.backgroundImage = "url(res/MHXHitNew.png)";
 
     board.MHXScream.play();
 

@@ -193,11 +193,11 @@ const Board = function(){
     switch (e.keyCode) {
       case 37:
         self.movement.left = false;
-        self.heroine.el.style.backgroundImage = "url(res/HeroineDefault.png)";
+        self.heroine.el.style.backgroundImage = "url(res/MHX.png)";
         break;
       case 39:
         self.movement.right = false;
-        self.heroine.el.style.backgroundImage = "url(res/HeroineDefault.png)";
+        self.heroine.el.style.backgroundImage = "url(res/MHX.png)";
         break;
       case 32:
         self.movement.shoot = false;
