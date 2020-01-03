@@ -10,6 +10,7 @@ startButton.addEventListener('click', function(){
   document.getElementById('heroine').style.zIndex = 0;
   document.getElementById('score-tracker').style.zIndex = 1;
   document.getElementById('life-tracker').style.zIndex = 1;
+  document.getElementById('startbutton').style.display = "none";
 })
 
 const retryButton = document.getElementById('retrybutton');
