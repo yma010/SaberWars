@@ -8,7 +8,7 @@
     background-color: black;
     font-family: 'Share Tech Mono', monospace;
     color: white;
-    transform: translateX(10%);
+    transform: translateX(10vw);
   }
 
   h1 {
