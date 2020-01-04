@@ -168,16 +168,20 @@
     top: 150px;
     left: 170px;
     z-index: -1;
-    line-height: 5.5em
+    line-height: 5.5em;
   }
 
   #gameover h1 {
     font-size: 80px;
-    ;
   }
 
   #retrybutton {
     color: red;
+  }
+
+  #retrybutton:hover{
+    color: gold;
+    cursor: pointer;
   }
 
   #title {
