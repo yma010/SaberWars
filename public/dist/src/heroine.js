@@ -57,10 +57,10 @@ const Heroine = function() {
 
   const shoot = function() {
     if(self.beams.length >= maxBeam) {
-      board.excalibur.play();
+      // board.excalibur.play();
       return;
     }
-    board.excalibur.play();
+    // board.excalibur.play();
     self.beams.push(new Beams(self.position.x, self.position.y, 15, 'heroine-beam'));
   }
 

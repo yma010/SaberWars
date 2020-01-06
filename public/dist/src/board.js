@@ -14,6 +14,7 @@ startButton.addEventListener('click', function(){
 })
 
 const retryButton = document.getElementById('retrybutton');
+ 
 retryButton.addEventListener('click', () => {
   board.heroine.lives = 3;
   gameState = 'gamestart';
@@ -40,7 +41,7 @@ const Board = function(){
 
   const self = this;
 
-  this.excalibur = new Audio('./res/Exaclibahhh.mp3');
+  // this.excalibur = new Audio('./res/Exaclibahhh.mp3');
   // this.explodeFX = new Audio();
   this.MHXScream = new Audio('./res/MHXScream.mp3');
 
